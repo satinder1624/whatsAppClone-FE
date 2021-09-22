@@ -10,7 +10,6 @@ import { useStateValue } from "./StateProvider";
 import Phone from "./Phone";
 import "./root.css";
 
-
 function App() {
   // const [messages, setMessages] = useState([]);
 
@@ -18,7 +17,7 @@ function App() {
 
   const [{ user }] = useStateValue();
 
-  const host = "http://localhost:9000";
+  const host = "https://whastapp-mern.herokuapp.com";
 
   useEffect(() => {
     const getAllChatRooms = async () => {

@@ -13,7 +13,7 @@ function SidebarChat({ id, roomName, addNewChat }) {
   const [lastMessage, setLastMessage] = useState([]);
   const match = "uploads/";
 
-  const host = "http://localhost:9000";
+  const host = "https://whastapp-mern.herokuapp.com";
 
   useEffect(async () => {
     if (id) {
@@ -66,7 +66,7 @@ function SidebarChat({ id, roomName, addNewChat }) {
     const pusher = new Pusher("d2dff77486561bce3c03", {
       cluster: "us2",
     });
-    // 
+    //
     const channel = pusher.subscribe("lastMessages");
     channel.bind("lastInserted", (newMessage) => {
       if (new RegExp("\\b" + match + "\\b").test(newMessage.message)) {

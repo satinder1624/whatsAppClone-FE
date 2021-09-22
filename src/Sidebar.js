@@ -19,20 +19,19 @@ import { actionTypes } from "./reducer";
 function Sidebar({ allChatRooms }) {
   const [{ user }, dispatch] = useStateValue();
   let condition = true;
-  const [checkedA,setCheckedA] = useState(false);
-  const host = "http://localhost:9000";
+  const [checkedA, setCheckedA] = useState(false);
+  const host = "https://whastapp-mern.herokuapp.com";
 
-  useEffect(()=>{
+  useEffect(() => {
     let theme = localStorage.getItem("data-theme");
-    if(theme === 'dark'){
+    if (theme === "dark") {
       setCheckedA(true);
       changeThemeToDark();
-    }else{
+    } else {
       setCheckedA(false);
       changeThemeToLight();
     }
-  },[])
-
+  }, []);
 
   const changeThemeToDark = () => {
     document.documentElement.setAttribute("data-theme", "dark"); // set theme to dark
@@ -75,7 +74,6 @@ function Sidebar({ allChatRooms }) {
       changeThemeToDark();
       setCheckedA(true);
     }
-
   };
 
   const createChat = async (e) => {
@@ -119,7 +117,7 @@ function Sidebar({ allChatRooms }) {
               value="start"
               labelPlacement="start"
               onClick={changeTheme}
-              control={<Switch color="primary" checked={checkedA}/>}
+              control={<Switch color="primary" checked={checkedA} />}
             />
           </span>
         </div>

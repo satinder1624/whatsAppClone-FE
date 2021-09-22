@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import Picker from "emoji-picker-react";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import CheckIcon from '@material-ui/icons/Check';
+import CheckIcon from "@material-ui/icons/Check";
 import Phone from "./Phone";
 
 function Chat() {
@@ -23,56 +23,52 @@ function Chat() {
   const [eachRoomMessages, setEachRoomMessages] = useState([]);
   const [lastSeen, setLastSeen] = useState("");
   const endOfMessagesRef = useRef(null);
-  let div,typing,element,file,a,startingValue;
+  let div, typing, element, file, a, startingValue;
   let condition = true;
-  const host = "http://localhost:9000";
-  
+  const host = "https://whastapp-mern.herokuapp.com";
+
   const [typingCondition, setTypingCondition] = useState(false);
   let emojiCondition = false;
-  
+
   const inputREF = useRef(null);
-  
+
   const match = "uploads/";
 
   useEffect(() => {
     const fetchData = async () => {
       if (roomId) {
-        await axios
-          .get(`${host}/query/${roomId}`)
-          .then((response) => {
-            setEachRoomMessages(response.data);
-            response.data.length === 0
-              ? setLastSeen("..")
-              : dateFormat(new Date().toUTCString(), "d mmmm yyyy") ===
-                dateFormat(
-                  response.data[response.data.length - 1].timestamp,
+        await axios.get(`${host}/query/${roomId}`).then((response) => {
+          setEachRoomMessages(response.data);
+          response.data.length === 0
+            ? setLastSeen("..")
+            : dateFormat(new Date().toUTCString(), "d mmmm yyyy") ===
+              dateFormat(
+                response.data[response.data.length - 1].timestamp,
                 "d mmmm yyyy"
-                )
-              ? setLastSeen(
-                  "Last seen Today at " +
-                    dateFormat(
-                      response.data[response.data.length - 1].timestamp,
-                      "h:MM TT"
-                    )
-                )
-              : setLastSeen(
-                  "Last seen on " +
-                    dateFormat(
-                      response.data[response.data.length - 1].timestamp,
-                      "mm/d/yyyy"
-                    )
-                );
-          });
+              )
+            ? setLastSeen(
+                "Last seen Today at " +
+                  dateFormat(
+                    response.data[response.data.length - 1].timestamp,
+                    "h:MM TT"
+                  )
+              )
+            : setLastSeen(
+                "Last seen on " +
+                  dateFormat(
+                    response.data[response.data.length - 1].timestamp,
+                    "mm/d/yyyy"
+                  )
+              );
+        });
       }
-    }
+    };
     fetchData();
-    
   }, [roomId]);
-
 
   useEffect(() => {
     // Extract from pusher
-    
+
     const pusher = new Pusher("5701d7355c6d0df0206a", {
       cluster: "us2",
     });
@@ -89,25 +85,24 @@ function Chat() {
   }, [eachRoomMessages]);
 
   useEffect(() => {
-  // One task
-      a = document.querySelector("#scroll-bottom");
-      if (a.scrollHeight !== a.clientHeight) {
-        a.scrollTop = a.scrollHeight - a.clientHeight;
-      } else {
-        a.scrollTop = a.clientHeight;
-      }
-      startingValue = a.scrollTop;
-  // Second Task
-      div = document.getElementById("slide-div");
-      element = document.getElementById("chat__emoji_id");
-      typing = document.getElementById("messageField");
-      if (typing.value !== "") {
-        setTypingCondition(true);
-      } else {
-        setTypingCondition(false);
-      }
-  }); 
-  
+    // One task
+    a = document.querySelector("#scroll-bottom");
+    if (a.scrollHeight !== a.clientHeight) {
+      a.scrollTop = a.scrollHeight - a.clientHeight;
+    } else {
+      a.scrollTop = a.clientHeight;
+    }
+    startingValue = a.scrollTop;
+    // Second Task
+    div = document.getElementById("slide-div");
+    element = document.getElementById("chat__emoji_id");
+    typing = document.getElementById("messageField");
+    if (typing.value !== "") {
+      setTypingCondition(true);
+    } else {
+      setTypingCondition(false);
+    }
+  });
 
   const downloadLink = () => {
     let span = document.getElementById("chat__download__icon");
@@ -134,10 +129,7 @@ function Chat() {
       data.append("timestamp", new Date().toUTCString());
       data.append("email", user.email);
 
-      await axios.post(
-        `${host}/uploadProfilePicture/${roomId}`,
-        data
-      );
+      await axios.post(`${host}/uploadProfilePicture/${roomId}`, data);
     };
   };
 
@@ -174,14 +166,13 @@ function Chat() {
     e.preventDefault();
     a = document.querySelector("#scroll-bottom");
     let downArrow = document.getElementById("chat__down__arrow");
-    
+
     if (!(a.scrollTop > startingValue - 66)) {
       downArrow.classList.add("chat__down__arrow_animation");
-    } 
-    else {
+    } else {
       downArrow.classList.remove("chat__down__arrow_animation");
     }
-  };  
+  };
 
   const threeDots = (e) => {
     e.preventDefault();
@@ -201,32 +192,30 @@ function Chat() {
 
     await axios.delete(`${host}/delete/${roomId}`);
 
-    await axios
-      .get(`${host}/query/${roomId}`)
-      .then((response) => {
-        setEachRoomMessages(response.data);
-        response.data.length === 0
-          ? setLastSeen("..")
-          : dateFormat(new Date().toUTCString(), "d mmmm yyyy") ===
-            dateFormat(
-              response.data[response.data.length - 1].timestamp,
-              "d mmmm yyyy"
-            )
-          ? setLastSeen(
-              "Last seen Today at " +
-                dateFormat(
-                  response.data[response.data.length - 1].timestamp,
-                  "h:MM TT"
-                )
-            )
-          : setLastSeen(
-              "Last seen on " +
-                dateFormat(
-                  response.data[response.data.length - 1].timestamp,
-                  "mm/d/yyyy"
-                )
-            );
-      });
+    await axios.get(`${host}/query/${roomId}`).then((response) => {
+      setEachRoomMessages(response.data);
+      response.data.length === 0
+        ? setLastSeen("..")
+        : dateFormat(new Date().toUTCString(), "d mmmm yyyy") ===
+          dateFormat(
+            response.data[response.data.length - 1].timestamp,
+            "d mmmm yyyy"
+          )
+        ? setLastSeen(
+            "Last seen Today at " +
+              dateFormat(
+                response.data[response.data.length - 1].timestamp,
+                "h:MM TT"
+              )
+          )
+        : setLastSeen(
+            "Last seen on " +
+              dateFormat(
+                response.data[response.data.length - 1].timestamp,
+                "mm/d/yyyy"
+              )
+          );
+    });
   };
 
   const deleteChat = async (e) => {
@@ -298,24 +287,32 @@ function Chat() {
                 {message.timestamp
                   ? dateFormat(message.timestamp, "h:MM TT")
                   : "..."}
-                  <span className='tick__container'>
-              {message.email === user.email ? <span className='single__tick'><CheckIcon fontSize='small'></CheckIcon></span> : ""}
-              
-            </span>  
+                <span className="tick__container">
+                  {message.email === user.email ? (
+                    <span className="single__tick">
+                      <CheckIcon fontSize="small"></CheckIcon>
+                    </span>
+                  ) : (
+                    ""
+                  )}
+                </span>
               </span>
             ) : (
               <span className="chat__timestamp">
                 {message.timestamp
                   ? dateFormat(message.timestamp, "h:MM TT")
                   : "..."}
-                  <span className='tick__container'>
-              {message.email === user.email ? <span className='single__tick'><CheckIcon fontSize='small'></CheckIcon></span> : ""}
-              
-            </span>  
+                <span className="tick__container">
+                  {message.email === user.email ? (
+                    <span className="single__tick">
+                      <CheckIcon fontSize="small"></CheckIcon>
+                    </span>
+                  ) : (
+                    ""
+                  )}
+                </span>
               </span>
-            )}   
-
-                     
+            )}
           </p>
         ))}
 
@@ -332,7 +329,7 @@ function Chat() {
 
       <div className="chat__options" id="slide-div">
         <Button onClick={deleteChat} id="chat____">
-          <Link to='/'>Delete Chat</Link>
+          <Link to="/">Delete Chat</Link>
         </Button>
         <br></br>
         <Button onClick={clearChat} id="chat____">
