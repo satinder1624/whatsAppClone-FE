@@ -1,0 +1,135 @@
+:root {
+  /* App.css */
+  --app-bg-color: #dadbd3;
+  --app-body-bg-color: #ededed;
+  --green-bg-color: rgba(0, 150, 136);
+
+  /* phone.css */
+  --main--div-border-b: rgba(73, 223, 131);
+  --main--div-bg-color: rgba(248, 249, 250);
+  --main--text-color: #525252;
+  --phone-light-path: url("./img/phoneNot.jpg");
+
+  /* sidebar.css */
+  --sidebar--header--border-r: lightgray;
+  --sidebar--search-bg-color: #f6f6f6;
+  --sidebar--searchContainer-bg-color: white;
+  --sidebar--searchContainer-searchIcon-color: gray;
+  --sidebar--options-bg-color: rgba(15, 233, 106, 0.733);
+  --sidebar--options-dark-c: black;
+  /*  */
+  --sidebar--searchContainer-border-b: white;
+  --sidebar--options-dark-c: black;
+
+  /* chat.css */
+  --chat--header-border-b: lightgray;
+  --chat--headerInfor-p-color: grey;
+  --chat--message-bg-color: white;
+  --chat--receiver-bg-color: #dcf8c6;
+  --chat--footer-border-t: lightgray;
+  --chat--footer-input-bg-c: white;
+  --chat--footer-input-c: black;
+  --chat--color: black;
+  --chat--options-bg-color: white;
+  --chat--bg-color: black;
+  --chat--hover-bg-color: rgb(105, 96, 96);
+  --chat--options-a: white;
+  --chat--image--outside-bg-color: aquamarine;
+  --chat--download--icon: white;
+  --chat--download--icon-bg-color: gray;
+  --chat-down--arrow-color: black;
+  --chat--down--arrow-bg-color: white;
+  --chat--heading-h3: black;
+  --chat-scroll-bg-color: rgba(0, 0, 0, 0.2);
+  --chat-scroll-bg: hsla(0, 0%, 100%, 0.1);
+  --placeholder-input-chat-color: grey;
+
+  /* login.css */
+  --login-bg-color: #f8f8f8;
+  --login--container-bg-color: #fff;
+  --login--container-button-bg-color: #0a8d48;
+  --login--container-button-color: white;
+
+  /* SidebarChat.css */
+  --sidebarChat-bg-color: white;
+  --sidebarChat-border-b: #f6f6f6;
+  --sidebarChat--hover-bg-color: #ebebeb;
+  --sidebarChat--a-color: black;
+  --sidebarChat--last: gray;
+  --sidebarChat-add-new-chat: black;
+
+  /* Icons Color */
+  --all-common-iconColor: grey;
+
+  /* Image Chat Body */
+  --chat-body-bg-image-path: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+}
+
+:root[data-theme="dark"] {
+  /* App.css */
+  --green-bg-color: rgba(36, 83, 78, 0.774);
+  --app-bg-color: rgba(0, 0, 0, 0.733);
+  --app-body-bg-color: rgba(40, 47, 50, 0.733);
+
+  /* phone.css */
+  --main--div-border-b: rgba(5, 97, 98);
+  --main--div-bg-color: rgba(38, 45, 49);
+  --main--text-color: gray;
+  --phone-light-path: url("./img/phoneNotDark.jpg");
+
+  /* sidebar.css */
+  --sidebar--header--border-r: rgba(19, 28, 33);
+  --sidebar--header-bg-color: rgba(40, 55, 57);
+  --sidebar--search-bg-color: rgba(19, 28, 33);
+  --sidebar--searchContainer-bg-color: rgba(40, 55, 57);
+  --sidebar--searchContainer-searchIcon-color: gray;
+  --sidebar--searchInput-color: white;
+  --sidebar--searchContainer-border-b: rgba(40, 55, 57);
+  --sidebar--options-bg-color: gray;
+  --sidebar--options-dark-c: white;
+
+  /* chat.css */
+  --chat--header-border-b: rgba(36, 83, 78, 0.774);
+  --chat--headerInfor-p-color: grey;
+  --chat--message-bg-color: rgba(38, 45, 49);
+  --chat--color: white;
+  --chat--receiver-bg-color: rgba(5, 97, 98);
+  --chat--footer-border-t: rgba(36, 83, 78, 0.774);
+  --chat--footer-input-bg-c: gray;
+  --chat--footer-input-c: white;
+  --chat--options-bg-color: gray;
+  --chat--bg-color: rgba(19, 28, 33);
+  --chat--color: white;
+  --chat--hover-bg-color: rgb(36, 90, 72);
+  --chat--options-a: white;
+  --chat--image--outside-bg-color: aquamarine;
+  --chat--download--icon: white;
+  --chat--download--icon-bg-color: gray;
+  --chat-down--arrow-color: white;
+  --chat--down--arrow-bg-color: rgba(38, 45, 49);
+  --chat--heading-h3: white;
+  --chat-scroll-bg-color: rgb(36, 34, 34);
+  --chat-scroll-bg: transparent;
+  --placeholder-input-chat-color: white;
+
+  /* login.css */
+  --login-bg-color: #f8f8f8;
+  --login--container-bg-color: #fff;
+  --login--container-button-bg-color: #0a8d48;
+  --login--container-button-color: white;
+
+  /* SidebarChat.css */
+  --sidebarChat-border-b: rgba(40, 55, 57);
+  --sidebarChat-bg-color: rgba(19, 28, 33);
+  --sidebarChat--hover-bg-color: rgba(50, 55, 57);
+  --sidebarChat--a-color: white;
+  --sidebarChat--last: gray;
+  --sidebarChat-add-new-chat: rgba(0, 175, 156);
+
+  /* Icons Color */
+  --all-common-iconColor: grey;
+
+  /* Image Chat Body */
+
+  --chat-body-bg-image-path: url("https://i.ibb.co/gDXtMDY/DarkMode.jpg");
+}

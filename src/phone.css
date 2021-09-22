@@ -1,0 +1,48 @@
+.mainDiv {
+  display: flex;
+  flex: 0.7;
+  background-color: var(--main--div-bg-color);
+  border-bottom: 7px solid var(--main--div-border-b);
+}
+
+.phoneSection {
+  margin: 0 auto;
+  margin-top: 9rem;
+  text-align: center;
+  padding: 10px;
+}
+
+.phone_picture {
+  background-image: var(--phone-light-path);
+  background-repeat: no-repeat;
+  height: 45vh;
+}
+
+h1 {
+  color: var(--main--text-color);
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.phone_Detailed > p {
+  color: var(--main--text-color);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* If the browser window is 600px or smaller */
+@media only screen and (max-width: 798px) {
+  h1 {
+    font-size: 26px;
+    margin-top: -2rem;
+  }
+}
+
+/* If the browser window is 641px or smaller */
+@media only screen and (max-width: 641px) {
+  h1 {
+    font-size: 21px;
+    margin-top: -1rem;
+  }
+}

@@ -1,0 +1,117 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  flex: 0.3;
+  background-color: var(--sidebar--header-bg-color);
+}
+
+.sidebar__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem;
+  border-right: 1px solid var(--sidebar--header--border-r);
+  position: relative;
+  height: 3.9vh;
+}
+
+.sidebar__headerRight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 10vw;
+}
+
+.sidebar__headerRight .MuiSvgIcon-root {
+  /* margin-right: 2vw;
+  font-size: 24px !important; */
+  color: var(--all-common-iconColor);
+}
+
+.chat__headerRight .MuiSvgIcon-root {
+  color: grey;
+}
+
+.sidebar__search {
+  display: flex;
+  align-items: center;
+  background-color: var(--sidebar--search-bg-color);
+  height: 2.4rem;
+  padding: 10px;
+  border-bottom: 1px solid var(--sidebar--searchContainer-border-b);
+}
+
+.sidebar__searchContainer {
+  display: flex;
+  align-items: center;
+  background-color: var(--sidebar--searchContainer-bg-color);
+  height: 2.3rem;
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.sidebar__searchContainer > .MuiSvgIcon-root {
+  color: var(--sidebar--searchContainer-searchIcon-color);
+  padding: 10px;
+}
+
+.sidebar__searchContainer > input {
+  border: none;
+  outline-width: 0;
+  margin-left: 8px;
+  margin-right: 20px;
+  flex: 1;
+  background-color: var(--sidebar--searchContainer-bg-color);
+  color: var(--sidebar--searchInput-color);
+}
+
+.sidebar__chats {
+  flex: 1;
+  background-color: var(--sidebar--searchContainer-bg-color);
+  overflow: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.sidebar__chats::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.sidebar__chats {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Options */
+.sidebar__options {
+  text-align: letf;
+  width: 8vw;
+  background-color: var(--sidebar--options-bg-color);
+  padding: 0.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  box-shadow: -1px 4px 15px -6px rgba(0, 0, 0, 0.75);
+  transform: scale(0);
+  position: absolute;
+  top: 4.375rem;
+  right: 1rem;
+}
+
+.sidebar__options_animation {
+  transform: scale(1);
+  transition: all 0.5s;
+}
+
+.sidebar__options__dark {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar__options__dark__content {
+  color: var(--sidebar--options-dark-c);
+  padding-bottom: 0.2rem;
+}
+
+.sidebar__options__signOut {
+  cursor: pointer;
+}
