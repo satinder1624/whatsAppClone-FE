@@ -4,13 +4,13 @@ import "./login.css";
 import { auth, provider } from "./firebase.js";
 import { useStateValue } from "./StateProvider";
 import { actionTypes } from "./reducer";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 function Login() {
   // Dispatch is like a gun who push the data into data layer
   const [{}, dispatch] = useStateValue();
 
   const signIn = () => {
-    auth
-      .signInWithPopup(provider)
+    signInWithPopup(auth, provider)
       .then((result) => {
         dispatch({
           type: actionTypes.SET_USER,
